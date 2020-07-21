@@ -3,10 +3,23 @@ const mongoose = require('mongoose')
 mongoose.set('useFindAndModify', false)
 
 const blogSchema = mongoose.Schema({
-    title: String,
-    author: String,
-    url: String,
-    likes: Number
+    title: {
+        type: String,
+        required: true,
+        minlength: 5
+    },
+    author: {
+        type: String,
+        required: true
+    },
+    url: {
+        type: String,
+        required: true
+    },
+    likes: {
+        type: String,
+        default: 0
+    }
 })
 
 blogSchema.set('toJSON', {

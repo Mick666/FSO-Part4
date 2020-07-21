@@ -2,9 +2,9 @@ const Blog = require('../models/blogs')
 
 const initialBlogs = [
     {
-        title: 'Go To Statement Considered Harmful',
+        title: 'Blog 1',
         author: 'Mate Mateson',
-        url: 'http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html',
+        url: 'https://mongoosejs.com/docs/api.html#model_Model.find',
         likes: 4,
         __v: 0
     },
