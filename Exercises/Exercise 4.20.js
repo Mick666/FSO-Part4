@@ -1,3 +1,4 @@
+//Controller/Blog.js
 const blogsRouter = require('express').Router()
 const jwt = require('jsonwebtoken')
 const Blog = require('../models/blogs')
@@ -40,3 +41,20 @@ blogsRouter.put('/:id', async (request, response) => {
 })
 
 module.exports = blogsRouter
+
+//Utils/Middleware.js
+
+const tokenExtractor = (request, response, next) => {
+  const authorization = request.get('authorization')
+  if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
+      request.token = authorization.substring(7)
+  } else {
+    request.token = null
+  }
+  next()
+}
+
+module.exports = {
+    tokenExtractor,
+}
+
